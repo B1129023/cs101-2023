@@ -7,21 +7,26 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
 #include <stdio.h>
-
+int power(int count,int a,int n){ 
+    for(int i=1;i<n;i++){
+        count*=a;        
+    }
+    return count;
+}
 int main()
 {
+    char b[]="11011110";
+    int flag=4;
     int count=1;
-    char a[]="AABBBCCCCdd";
-    for(int i=1;i<(unsigned)sizeof(a);i++){
-        if(a[i]==a[i-1]){
-            count+=1;
-        }
-        else{
-            printf("%c%d",a[i-1],count);
+    int sum=0;
+    for(int i=0;i<8;i++,flag--){
+        if(b[i]==49)
+            sum=sum+power(count,2,flag);
+        if(flag==1){
+            printf("%X",sum);
+            sum=0;
             count=1;
+            flag=4;
         }
     }
-
-    return 0;
 }
-

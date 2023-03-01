@@ -10,18 +10,24 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 int main()
 {
-    int count=1;
-    char a[]="AABBBCCCCdd";
-    for(int i=1;i<(unsigned)sizeof(a);i++){
-        if(a[i]==a[i-1]){
-            count+=1;
-        }
-        else{
-            printf("%c%d",a[i-1],count);
-            count=1;
+    char a[]="ABC123";
+    int shift=3;
+    int temp;
+    int len=(unsigned)sizeof(a)-1;
+    for(int i=0;i<shift;i++){
+        for(int j=0;j<len;j++){
+            if(j==0){
+                temp=a[j];
+            }
+            else if(j==len-1){
+                a[j]=temp;
+                continue;
+            }
+            a[j]=a[j+1];
         }
     }
-
-    return 0;
+    printf("%s",a);
 }
+
+
 
