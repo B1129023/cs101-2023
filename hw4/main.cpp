@@ -44,123 +44,61 @@ void choose_number(int count,char a[]){
     }
     if(detect==0){
             cout<<"請重新輸入下一步"<<endl;
-            print_title();
-            print_chessboard(a);
             choose_number(count,a);
+        }
+}
+int whowin(char a){
+    if(a=='X'){
+            cout<<endl;
+            cout<<"==>Player 1 win";
+            return 1;
+        }
+        else{
+            cout<<endl;
+            cout<<"==>Player 2 win";
+            return 1;
         }
 }
 int check(int count,char a[]){
     if(a[0]==a[1] && a[0]==a[2]){
         print_title();
         print_chessboard(a);
-        if(a[0]=='X'){
-            cout<<endl;
-            cout<<"==>Player 1 win";
-            return 1;
-        }
-        else{
-            cout<<endl;
-            cout<<"==>Player 2 win";
-            return 1;
-        }
+        return whowin(a[0]);
     }
     if(a[3]==a[4] && a[3]==a[5]){
         print_title();
         print_chessboard(a);
-        if(a[0]=='X'){
-            cout<<endl;
-            cout<<"==>Player 1 win";
-            return 1;
-        }
-        else{
-            cout<<endl;
-            cout<<"==>Player 2 win";
-            return 1;
-        }
+        return whowin(a[3]);
     }
     if(a[6]==a[7] && a[6]==a[8]){
         print_title();
         print_chessboard(a);
-        if(a[0]=='X'){
-            cout<<endl;
-            cout<<"==>Player 1 win";
-            return 1;
-        }
-        else{
-            cout<<endl;
-            cout<<"==>Player 2 win";
-            return 1;
-        }
+        return whowin(a[6]);
     }
     if(a[0]==a[3] && a[0]==a[6]){
         print_title();
         print_chessboard(a);
-        if(a[0]=='X'){
-            cout<<endl;
-            cout<<"==>Player 1 win";
-            return 1;
-        }
-        else{
-            cout<<endl;
-            cout<<"==>Player 2 win";
-            return 1;
-        }
+        return whowin(a[0]);
     }
     if(a[1]==a[4] && a[1]==a[7]){
         print_title();
         print_chessboard(a);
-        if(a[0]=='X'){
-            cout<<endl;
-            cout<<"==>Player 1 win";
-            return 1;
-        }
-        else{
-            cout<<endl;
-            cout<<"==>Player 2 win";
-            return 1;
-        }
+        return whowin(a[1]);
     }
     if(a[2]==a[5] && a[2]==a[8]){
         print_title();
         print_chessboard(a);
-        if(a[0]=='X'){
-            cout<<endl;
-            cout<<"==>Player 1 win";
-            return 1;
-        }
-        else{
-            cout<<endl;
-            cout<<"==>Player 2 win";
-            return 1;
-        }
+        return whowin(a[2]);
     }
     if(a[0]==a[4] && a[0]==a[8]){
         print_title();
         print_chessboard(a);
-        if(a[0]=='X'){
-            cout<<endl;
-            cout<<"==>Player 1 win";
-            return 1;
-        }
-        else{
-            cout<<endl;
-            cout<<"==>Player 2 win";
-            return 1;
-        }
+        return whowin(a[0]);
     }
     if(a[2]==a[4] && a[2]==a[6]){
         print_title();
         print_chessboard(a);
-        if(a[0]=='X'){
-            cout<<endl;
-            cout<<"==>Player 1 win";
-            return 1;
-        }
-        else{
-            cout<<endl;
-            cout<<"==>Player 2 win";
-            return 1;
-        }
+        return whowin(a[2]);
     }
     if(count==8){
         print_title();
@@ -196,6 +134,3 @@ int main()
     game.run();
     return 0;
 }
-
-
-
