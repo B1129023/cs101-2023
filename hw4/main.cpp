@@ -44,6 +44,8 @@ void choose_number(int count,char a[]){
     }
     if(detect==0){
             cout<<"請重新輸入下一步"<<endl;
+            print_title();
+            print_chessboard(a);
             choose_number(count,a);
         }
 }
@@ -194,5 +196,6 @@ int main()
     game.run();
     return 0;
 }
+
 
 
