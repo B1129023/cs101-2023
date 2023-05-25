@@ -16,19 +16,21 @@ class ReplaceMyString{
     public:
     string OldString;
     string NewString;
-    ReplaceMyString(){
+    ReplaceMyString(){}
+    void replaceString(const string oldstring,const string newstring){
         ifstream inputFile("main.cpp");  
         ofstream outputFile("rmain.cpp"); 
-        char c;
-        while (inputFile.get(c) && c != EOF) {
-            outputFile.put(c);
+        string line;
+        while (getline(inputFile, line)) {
+            size_t pos = line.find(oldstring);
+            while (pos != string::npos) {
+                line.replace(pos, oldstring.length(), newstring);
+                pos = line.find(oldstring, pos + newstring.length());
+            }
+            outputFile << line << endl;
         }
-        
         inputFile.close();
         outputFile.close();
-    }
-    void replaceString(string oldstring,string newstring){
-        
     }
     
 };
